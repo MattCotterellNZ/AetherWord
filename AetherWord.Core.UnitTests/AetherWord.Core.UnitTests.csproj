@@ -53,13 +53,14 @@
   <ItemGroup>
     <Compile Include="GeneratorServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pbkdf2Sha256Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AetherWord.Core\AetherWord.Core.csproj">
       <Project>{b45932c6-fcb1-4518-92d1-2bbcd4facdcc}</Project>
       <Name>AetherWord.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Portable.Desktop\Portable.Desktop.csproj">
+    <ProjectReference Include="..\PclContrib\Portable.Desktop\Portable.Desktop.csproj">
       <Project>{cb321354-4d97-42fa-9a84-4677d8a90427}</Project>
       <Name>Portable.Desktop</Name>
     </ProjectReference>

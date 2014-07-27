@@ -35,13 +35,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Ascii85.cs" />
-    <Compile Include="AsciiToBytes.cs" />
     <Compile Include="GeneratorService.cs" />
     <Compile Include="Pbkdf2Sha256.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Portable.Security.Cryptography\Portable.Security.Cryptography.csproj">
+    <ProjectReference Include="..\PclContrib\Portable.Security.Cryptography\Portable.Security.Cryptography.csproj">
       <Project>{9186cc3d-dce0-40cf-9762-efabe6c342d2}</Project>
       <Name>Portable.Security.Cryptography</Name>
     </ProjectReference>
