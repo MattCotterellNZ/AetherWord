@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AetherWord.Core", "AetherWord.Core\AetherWord.Core.csproj", "{B45932C6-FCB1-4518-92D1-2BBCD4FACDCC}"
 EndProject
@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		WebEssentials-Settings.json = WebEssentials-Settings.json
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "html5up_temp", "html5up_temp\html5up_temp.csproj", "{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -200,6 +202,16 @@ Global
 		{50392407-83C2-44AD-999C-FB3832114E32}.Release|ARM.ActiveCfg = Release|Any CPU
 		{50392407-83C2-44AD-999C-FB3832114E32}.Release|x64.ActiveCfg = Release|Any CPU
 		{50392407-83C2-44AD-999C-FB3832114E32}.Release|x86.ActiveCfg = Release|Any CPU
+		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Release|x64.ActiveCfg = Release|Any CPU
+		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

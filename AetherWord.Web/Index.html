@@ -1,16 +1,82 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html data-ng-app="app">
 <head>
-    <title></title>
-    <script src="Scripts/cryptojs/rollups/sha256.js"></script>
-    <script src="Scripts/cryptojs/rollups/pbkdf2.js"></script>
-    <script src="Scripts/jquery-2.1.1.js"></script>
-    <script src="Scripts/Generator.js"></script>
-    <script src="Scripts/LoginPage.js"></script>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none!important;
+        }
+    </style>
+    <title data-ng-bind="title">Aetherword</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />-->
+
+    <!--<script>
+        // Must be first. IE10 mobile viewport fix
+        if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>-->
+
+    <!--<link href="content/ie10mobile.css" rel="stylesheet" />-->
+    <!--<link href="content/bootstrap.min.css" rel="stylesheet" />-->
+    <link href="content/font-awesome.min.css" rel="stylesheet" />
+    <link href="content/toastr.css" rel="stylesheet" />
+    <!--<link href="content/styles.css" rel="stylesheet" />-->
+    <link href="content/main.css" rel="stylesheet"/>
 </head>
-    <body>
-        <input type="url" id="domain" name="domain" value="google.com" width="50"/>
-        <input type="text" id="masterpassword" name="masterpassword" value="test"/>
-        <div id="aetherword-result"></div>
-    </body>
+<body>
+    <div>
+        <div data-ng-include="'/app/layout/shell.html'"></div>
+    </div>
+
+    <span data-cc-scroll-to-top></span>
+
+    <!-- Vendor Scripts -->
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/jquery.poptrox.min.js"></script>
+    <script src="Scripts/jquery.scrolly.min.js"></script>
+    <script src="Scripts/jquery.scrollgress.min.js"></script>
+    <script src="Scripts/skel.min.js"></script>
+    <script src="Scripts/init.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
+    <script src="Scripts/toastr.js"></script>
+    <script src="Scripts/moment.js"></script>
+    <script src="Scripts/spin.js"></script>
+
+    <!-- Bootstrapping -->
+    <script src="app/app.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/config.exceptionHandler.js"></script>
+    <script src="app/config.route.js"></script>
+
+    <!-- common Modules -->
+    <script src="app/common/common.js"></script>
+    <script src="app/common/logger.js"></script>
+    <script src="app/common/spinner.js"></script>
+
+    <!-- common.bootstrap Modules -->
+    <script src="app/common/bootstrap/bootstrap.dialog.js"></script>
+
+    <!-- app -->
+    <script src="app/landing/Landing.js"></script>
+    <script src="app/admin/admin.js"></script>
+    <script src="app/dashboard/dashboard.js"></script>
+    <script src="app/layout/shell.js"></script>
+    <script src="app/layout/sidebar.js"></script>
+
+    <!-- app Services -->
+    <script src="app/services/datacontext.js"></script>
+    <script src="app/services/directives.js"></script>
+</body>
 </html>

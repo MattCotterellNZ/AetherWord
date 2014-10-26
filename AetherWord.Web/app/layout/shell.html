@@ -1,0 +1,171 @@
+﻿<div data-ng-controller="shell as vm">
+    <!-- Header -->
+    <header id="header">
+
+        <!-- Logo -->
+        <h1 id="logo">Aetherword</h1>
+
+        <!-- Nav -->
+        <div data-ng-include="'/app/layout/topnav.html'"></div>
+
+    </header>
+
+    <!-- Intro -->
+    <section id="intro" class="main style1 dark fullscreen">
+        <div class="content container small">
+            <header>
+                <h2>Welcome to Aetherword</h2>
+            </header>
+            <p>
+                One Password.<br/>
+                All Websites.<br/>
+                <strong>No trace.</strong>
+            </p>
+            <footer>
+                <a href="#one" class="button style2 down">More</a>
+            </footer>
+        </div>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="main style1 dark fullscreen">
+        <div class="content container small">
+            <header>
+                <h2>Get Started</h2>
+            </header>
+            <form>
+                <label for="masterpassword">Master Password:</label>
+                <input type="password" id="masterpassword" name="masterpassword" value="test" />
+            </form>
+        </div>
+        <a href="#two" class="button style2 down anchored">Next</a>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="main style2 left fullscreen">
+        <div class="content box style2">
+            <header>
+                <h2>What is Aetherword?</h2>
+            </header>
+            <p>
+                Aetherword is a password manager, like keepass or LastPass. How Aetherword differs from the others is in where your passwords are stored: in the aether (i.e. nowhere).
+            </p>
+            <p>
+                Aetherword instead generates your passwords for you to use, based off a secret "master password" that only you know and the domain name of the website you want to log in to.
+                The website-specific password is then created using <a href="#three">industry standard cryptography and encoding</a>, ready for you to copy and paste into your favorite websites.
+                This is done in such a way as to make it <em>basically</em> impossible to reverse back to your secret "master password", thus keeping you safe on all other websites,
+                even if your password is leaked by another. All this, while only having to remember <strong>one password</strong>, and all without a single password list to look after.
+            </p>
+        </div>
+        <a href="#work" class="button style2 down anchored">Next</a>
+    </section>
+    
+    <!-- Three -->
+    <section id="three" class="main style1 centered dark fullscreen">
+        <div class="content box style1">
+            <header>
+                <h2>Cryptography</h2>
+            </header>
+            <p>
+                Aetherword uses industry standard cryptographic protocols such as PBKDF2 and HMAC-SHA256 to keep your master password safe. The idea behind it is actually remarkably simple.
+            </p>
+            <p>
+                First, a colour is generated based off your password using a single round of PBKDF2, discarding all bytes except the first. This is used to create the colour you see around your
+                password as you type it, so you know straight away if you've mistyped it. The collision likelyhood of this is so high (only 256 possible colours) that it is completely impossible
+                to reverse engineer your password simply by knowing the colour.
+            </p>
+            <p>
+                Next, the master password is stored temporarily in memory while we await which websites you wish to log in to. Once a website domain is entered, such as "facebook.com", the "master password"
+                is hashed on a seperate "web worker" thread using 10,000 rounds of PBKDF2-HMAC-SHA256, using the domain as the salt. 128 bits of hash data is then extracted and encoded using a process very
+                similar to ascii85 encoding (notably the "z" and "y" rules are ignored) and returned to the user as a 20-digit, random-looking password. This process is very computationally expensive,
+                making brute-forcing the master password <em>extremely</em> difficult (usually in the realm of centuries to crack). Any competent web developer knows that it is essential to hash passwords
+                when storing them in their database anyway (making cracking even more difficult), but this way you're protected on other sites even if they have screwed up.
+            </p>
+        </div>
+        <a href="#work" class="button style2 down anchored">Next</a>
+    </section>
+
+    <!--<!-- Work 
+    <section id="work" class="main style3 primary">
+        <div class="content container">
+            <header>
+                <h2>My Work</h2>
+                <p>
+                    Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+                    Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
+                    arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.
+                </p>
+            </header>
+
+            <!-- Lightbox Gallery  
+            <div class="container small gallery">
+                <div class="row flush images">
+                    <div class="6u"><a href="Content/images/fulls/01.jpg" class="image fit from-left"><img src="Content/images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
+                    <div class="6u"><a href="Content/images/fulls/02.jpg" class="image fit from-right"><img src="Content/images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
+                </div>
+                <div class="row flush images">
+                    <div class="6u"><a href="Content/images/fulls/03.jpg" class="image fit from-left"><img src="Content/images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
+                    <div class="6u"><a href="Content/images/fulls/04.jpg" class="image fit from-right"><img src="Content/images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
+                </div>
+                <div class="row flush images">
+                    <div class="6u"><a href="Content/images/fulls/05.jpg" class="image fit from-left"><img src="Content/images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a></div>
+                    <div class="6u"><a href="Content/images/fulls/06.jpg" class="image fit from-right"><img src="Content/images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
+                </div>
+            </div>
+
+        </div>
+    </section>-->
+
+    <!-- Contact -->
+    <section id="contact" class="main style3 secondary">
+        <div class="content container">
+            <header>
+                <h2>Any Questions?</h2>
+                <p>Drop me a line! I'd be happy to answer any queries you have.</p>
+            </header>
+            <div class="box container small">
+
+                <!-- Contact Form -->
+                <form method="post" action="#">
+                    <div class="row half">
+                        <div class="6u"><input type="text" name="name" placeholder="Name" /></div>
+                        <div class="6u"><input type="email" name="email" placeholder="Email" /></div>
+                    </div>
+                    <div class="row half">
+                        <div class="12u"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
+                    </div>
+                    <div class="row">
+                        <div class="12u">
+                            <ul class="actions">
+                                <li><input type="submit" value="Send Message" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+
+        <!-- Icons -->
+        <ul class="actions">
+            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+            <!--<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>-->
+        </ul>
+
+        <!-- Menu -->
+        <ul class="menu">
+            <li>&copy; Matt Cotterell</li>
+            <li>PGP Key: <a href="https://keybase.io/mattcotterellnz">75e2396c</a></li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+
+    </footer>
+</div>
